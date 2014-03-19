@@ -1,0 +1,880 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>SAC Conference Presentation</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=792, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="stylesheet" href="shower/themes/kevoree/styles/screen.css">
+    <link rel="stylesheet" href="extra/css/ionicons.css">
+    <link rel="stylesheet" href="extra/font-awesome-4.0.3/css/font-awesome.min.css">
+    
+</head>
+<body class="list">
+	
+
+	
+	    <section class="slide cover" id="Cover">
+	      <div align="center">
+	       <font color="#0041C2 " font size="6">
+	        <h1> <b>Generic Cloud Platform Multi-objective Optimization Leveraging Models@run.time</b></h1> </font>    
+	          
+	        <p>29th Symposium On Applied Computing Gyeongju, Korea March 24-28, 2014 <a href="http://pepelsbey.net"></a></p>
+	        <img src="pictures/cloud1.jpg" alt=""> <font size="5">
+	        
+	        <font color="#0041C2 ">	    
+	        <div align="center">Donia El Kateb, François Fouquet, Grégory Naim</div>
+	        <div align="center">Jorge Augusto Meira, Michel Ackerman, Yves Le Traon</div>
+	     
+	     
+	      </font> 	
+	<div align="center">
+	        <img src="pictures/snt.jpg"  style="
+	              position:relative;
+	              top: 50;
+	              left: 50;
+	              visibility: show;" alt="">
+	              
+	      <img src="pictures/ebrc.jpg"  style="
+	            position:relative;
+	            top: 50;
+	            left: 100;
+	            visibility: show;" alt="">
+	            
+	            <img src="pictures/uni.jpg"  style="
+	                  position:relative;
+	                  top: 50;
+	                  left: 150;
+	                  visibility: show;" alt="">
+	                  
+	                  
+	                  <img src="pictures/lassy.jpg"  style="
+	                        position:relative;
+	                        top: 50;
+	                        left: 200;
+	                        visibility: show;" alt=""> 
+	              
+	   </div>           
+	              
+	              
+	                <!--
+				To apply styles to the certain slides			set slide ID to get needed elements
+				-->
+
+	    </section>
+	    
+	    
+	    <section class="slide">
+	      <div>
+	        <h2>Who Are We?</h2>
+	        
+	        <span class="kevOrange"> Security Design and Validation Research Group – SERVAL, SnT:</span>	            
+	       <ul>
+	           <li><span class="kevOrange">Donia El Kateb:</span> PhD student</li>
+	           <li><span class="kevOrange">François Fouquet:</span> Research associate</li>
+	           <li><span class="kevOrange"> Grégory Nain:</span> Research associate</li>
+	           <li><span class="kevOrange">Michel Ackerman:</span> Business Consultant, EBRC</li>
+	           <li><span class="kevOrange"> Yves Le Traon:</span> Professor, Head of the SerVal research group</li>
+	       </ul>
+	       
+	       </div>
+	    </section>  
+
+   
+ <section class="slide shout">
+   <div>
+     <h2>Context</h2>
+   </div>
+ </section>
+	    
+  <section class="slide">
+    <div>
+      <h2>What is the Cloud?        </h2>
+      
+   <div align="center">        
+   <img src="pictures/cloud.jpg"  style="
+         position:relative;
+         height="700"
+         width="700"
+         visibility: show;" alt="">
+    </div>     
+   <p>Computing and software resources that are delivered on demand, as service.   
+      <i>(A Walk in the Clouds. Cloud Computing, CDW-G Reference Guide., 3-5)</i> </p>  </div></section>   
+   
+   
+   	    
+   	    <section class="slide">
+   	      <div>
+   	        <h2>Cloud Resources Management      </h2>
+   	        
+   	        <span class="kevOrange">Management of set of <code>heterogeneous</code> Resources	        :</span>	            
+   	       <ul>
+   	           <li> Different software versions, VM Management Platforms </li>
+   	          <li> Different physical machines characteristics</li>
+   	           <li> Concurrent execution of multiple operating systems </li>	          
+   	       </ul>
+   	       <span class="kevOrange">Need for <code>Resources Placement</code> Strategies  :</span>	            
+   	       <ul>	         
+   	           <li> Migrate VMs to more utilized nodes, Shutdown unused nodes </li>
+   	           <li> <code>Schedule</code> VMs to physical nodes, Virtual Machines <code>isolation</code></li>
+   	       </ul>
+   	       </div>
+   	    </section>  
+   	    
+   	    
+   	    <section class="slide">
+   	      <div align="center">
+   	        <h2> Resources Placement Problem</h2>
+   	        <img src="pictures/vmplacement.jpg"  style="
+   	             position:relative;
+   	             height="750"
+   	             width="750"
+   	             visibility: show;" alt="">
+   	        </div>    
+   	    </section>  
+   	    
+   	    <section class="slide shout">
+   	      <div>
+   	        <h2>Motivation</h2>
+   	      </div>
+   	    </section>
+   	    
+   	    
+   	    
+   	  
+   	  <section class="slide">
+   	    <div>
+   	      <h2> Abstraction for Elasticity Management   	      </h2>
+   	       <p class="note"> “the ability of software to meet changing capacity demands, deploying and releasing necessary resources on-demand”[Yefim et al.]</p>   	  
+   	    <span class="kevOrange">Need to provision/deprovision resources dynamically as response to:</span>	            
+   	     <ul>
+   	         <li> Increasing Workloads, Incident Response </li>
+   	         <li>  Changes in SLA requirements</li>	        
+   	     </ul>  	    
+   	   We need an <code>abstraction layer</code>and a <code>reasoning engine</code> to reason about</code> cloud adaptations   	 </p>         	    
+   	     </div>
+   	  </section>  
+   	  
+      	  
+   	  <section class="slide">
+   	    <div>
+   	      <h2>Conflicting Objectives in VM Management</h2>   
+   	    <p>How to place VM hosting applications belonging to many customers?</p>            
+   	    <div align="center">        
+   	    <img src="pictures/vm.jpg"  style="
+   	          position:relative;
+   	          height="550"
+   	          width="550"
+   	          visibility: show;" alt="">
+   	     </div>   
+   	  </div>
+   	  </section>  
+   	    
+   	   <section class="slide">  
+   	   <div>
+   	       <h2>Cloud Management</h2> 
+   	       <ul>      
+   	          <li>Cloud management (i.e., VM elastic management) has to deal with <code>trade-offs</code> such as cost, quality of service and security.</li>
+   	         <li>Cloud Management is a <code>multi-objective</code> optimization problem</li>	
+   	       <li>Current cloud platforms usually focus on one <code>dimensional optimization</code></li>	
+   	        </ul> 
+   	     </div> 
+   	     <div align="right">        
+   	     <img src="pictures/tradeoff.jpg" style="position:absolute;left:65%; top:60%; "alt="">
+   	     </div> 
+   	     </section> 
+   	      
+   	    
+   	    <section class="slide">
+   	      <div>
+   	        <h2>Motivation	      </h2>
+   	         <p>Writing a reasoner to handle  these trade-offs is difficult:
+   	         </p>   	  
+   	   	            
+   	       <ul>
+   	           <li> Several <code>conflicting</code> optimization axis  </li>
+   	           <li>  Inputs in each axis are <code>continuously</code> evolving</li>	   
+   	           <li>  Resources are <code>heterogeneous</code></li>	       
+   	       </ul> 
+   	      </div>
+   	    </section> 
+   	    
+   	    
+   	    <section class="slide">
+   	      <div>
+   	        <h2>Assumption: A cloud is a DAAS  </h2>
+   	         <p>The Cloud is a Dynamic Adaptive system:   	         </p>   	  
+   	    	<ul>
+   	           <li>Reconfiguration capabilities at runtime, to adjust to unpredictable conditions: <code>reflection</code>  </li>
+   	           <li>Capacity of observing their own behavior and analyzing their effectiveness: <code>introspection</code> </li>	   
+   	           <li>Ability to change their behavior: <code>intercession</code>   </li>	       
+   	       </ul> 
+   	      </div>
+   	    </section> 
+   	    
+   	    
+   	    
+   	    
+   <section class="slide">
+     <div>
+       <h2>Models at run.time for the cloud </h2>
+      
+     </div>
+    <div >        
+ <div align="center">        
+ <img src="pictures/runtime.jpg" style="position:absolute;left:1%; top:25%; "alt="">
+ </div>       </section> 
+   	  
+   	 
+ 	    
+   	<section class="slide shout">
+   	  <div>
+   	    <h2>Resolution</h2>
+   	  </div>
+   	</section>
+   	    
+   	  <section class="slide">
+   	    <div>
+   	      <h2>Problem Inputs </h2>
+   	     
+   	  	<ul>
+   	         <li>  A set of requirements that we must satisfy over time: <code>objectives</code>   </li>
+   	         <li>  A cloud configuration: <code>a model</code> </li>	   
+   	         <li>  A set of actions to update a configuration: <code>operators</code>   </li>	       
+   	     </ul> 
+   	    </div>
+   	  </section> 
+
+   	  
+   	  <section class="slide">
+   	    <div>
+   	      <h2>Resolution Approaches  </h2>
+   	     
+   	  	<ul>
+   	         <li>  Constraint Solving Techniques  </li>
+   	         <li>  Simulated Annealing </li>	   
+   	         <li>    Tabu Search  </li>	       
+   	     </ul> 
+   	     
+   	     <ul>
+   	         <li>  We advocate MOEA (Multi-objective Evolutionary Algorithm):   </li>
+   	         <li>  <code>Population</code> based </li>	   
+   	         <li>  Possible <code>optimal solutions</code> at any generation  </li>	       
+   	     </ul> 
+   	     
+   	     
+   	    </div>
+   	  </section> 
+   	  
+
+   	 
+   	 
+   	 <section class="slide">
+   	   <div>
+   	     <h2>Overall approach</h2>
+   	     
+   	  <div align="center">        
+   	  <img src="pictures/approach.jpg"  style="
+   	        position:relative;
+   	        height="550"
+   	        width="550"
+   	        visibility: show;" alt="">
+   	   </div>     
+   	    </div>       
+   	 </section> 
+   	
+   	  
+   	 
+   	 <section class="slide">
+   	   <div>
+   	     <h2>CMOP Inputs</h2>       
+   	  <div align="center">        
+   	  <img src="pictures/delivery.jpg"  style="
+   	        position:relative;
+   	        height="700"
+   	        width="700"
+   	        visibility: show;" alt="">
+   	   </div>     
+   	    </div>       
+   	 </section>     
+   	  
+   	  
+   	  
+   	    
+     
+         <section class="slide">  
+         <div align="justify">
+             <h2>CMOP Modeling</h2>
+             <p>Models@run.time for Cloud abstraction:       
+                     <ol>
+               <li>Provide high level abstraction for Clouds through a standard MOF-based metamodel
+               </li>
+               <li>Enable to reason about the system at design time 
+               </li>
+               <li>Extend the reasoning to the system while it is in a running state
+               </li>
+               <li>Reevaluate continuously requirements satisfaction while the system is evolving.          
+               </li>
+                </ol>
+                </p>
+                
+           </div>
+         </section>
+         
+         <section class="slide">  
+         <div >
+             <h2>CMOP Modeling</h2>
+                        <ol>
+               <li>A physical machine &rarr; Kevoree Infrastructure Node          
+               </li>
+               <li>A virtual machine &rarr; Kevoree Child Node          
+               </li>
+               <li>A component &rarr; Software service        
+               </li>        
+                </ol>
+                          </div>          
+           <img src="pictures/kevoree.jpg" style="position:absolute;left:1%; top:55%; "alt="">
+           </div></section>
+         
+         
+   
+         
+         
+         
+         <section class="slide">  
+         <div align="justify">
+             <h2>CMOP Problem Domain Inputs</h2>
+                   <p>We define CMOP by the following triplet (I,F,CO) such that: 	
+                               
+                     <ol>
+               <li>I denotes a cloud infrastructure model. 
+               
+               </li>
+               <li>F is a vector of objective functions F(X) = ( f<sub>1</sub>(x),f<sub>2</sub>(x),...,f<sub>n</sub>(X)), that have to be minimized.
+               
+               </li>
+               <li>CO denote possible cloud configurations: co = VM1(c1,c2,c3) denotes a configuration with a single virtual machine VM1 hosting 3 components c1,c2,c3.</li>
+            
+                </ol>
+                </p>
+              
+                
+           </div>
+         </section>
+         
+         
+         
+         
+         <section class="slide">
+           <div>
+             <h2>Operators Description </h2>
+             <table>
+               <tbody>
+                 <tr>
+                   <th scope="col">Operators</th>
+                   <th>Description</th>
+                 </tr>
+               
+               <tr>
+                 <th scope="col">AddComponent(c,A)	  </th>
+                 <td>Adds a component c in the the virtual machine A	</td>
+               </tr>
+                         
+               <tr>
+                 <th scope="col">RemoveComponent(c,A)</th>
+                 <td>Removes a component c in the virtual machine A            	</td>
+               </tr>          <tr>
+                 <th scope="col">MoveComponent(c,A,B)	
+                 
+                 </th>
+                 <td>Moves a component c from the virtual machine A to the virtual machine B	</td>
+               </tr> </tbody>
+             </table>
+                 </div>
+         </section>
+         
+         
+         
+             <section class="slide">  
+             <div>
+               <h2>Fitness Functions </h2>
+              
+                 <p>                            
+                         <ol>
+                   <li><code>f1(x)= Cost(x)</code> calculated based on Amazon pricing model (http://aws.amazon.com/ec2/pricing/)
+                   <li><code>f2(x)=Security(x) </code> defines the security level associated with a Component
+                   
+                   </li>
+                   <li><code>f3(x)=Completeness(x)</code> provides a score of the number of software components that have been placed
+                   </li>              
+                   <li><code>f4(x)=Overload(x)</code> defines the
+                   gap between the required and the observed % of virtual CPU
+                   for each software element</li>            
+                   
+                   <li>......</li>             
+            </li> </ol>
+                    </p>          </div>
+             </section>
+             
+             
+             
+             
+             
+         
+         <section class="slide">
+           <div>
+             <h2>CMOP Workflow</h2>
+            <div align="center">        
+            <img src="pictures/workflow.jpg"  style="
+                  position:relative;
+                  height="420"
+                  width="420"
+                  visibility: show;" alt="">
+             </div>     
+                  </div>
+         </section>
+         
+         
+         <section class="slide shout">
+           <div>
+             <h2>Validation</h2>
+           </div>
+         </section>
+         
+           
+      <section class="slide">  
+      <div >
+          <h2>Validation Objectives</h2>
+          <p>Validation of our approach is related to the scenarios of interest for EBRC provider in Luxembourg and aims at:                        
+            <ol>
+            <li>Providing a supervision approach to reconfigure a cloud platform according to evolving customer optimization objectives
+             </li>
+            <li> <code>Adjusting</code> customers resources provisioning and quality of service to the deployment costs                 
+            </li>  
+              <li> <code>Reducing</code> data centers energy consumption at the level of the cloud provider                 
+              </li>            
+             </ol>
+             </p>
+            </section>
+            
+            
+            
+        
+
+             
+             
+         
+           
+        <section class="slide">  
+        <div >
+            <h2>Experimental Setup</h2>
+            
+             <p><div align="justified">EBRC allocates to one of its customers a cluster composed of 5 physical machines to host its on-line stock trading website that is composed of the following components:</div>  </p>
+            
+         
+              <ol>
+              <li>A database to store items 
+              
+              
+               </li>
+              <li>  A load balancer
+                                    
+              </li>    
+              <li>   A database for payment
+                                   
+              </li>
+              <li>  A database to manage users 
+                                    
+              </li>
+              <li> A web Front-end
+                                 
+              </li>          
+               </ol>
+               </p>
+              </section>     
+                 
+         <section class="slide">  
+         <div >
+             <h2>Experimental Setup</h2>
+             
+              <p><div align="justified">5 physical machines that we deploy in Kevoree:
+              </div>  </p>          <ol>
+               <li>3 ARM based Infrastructure Node (1 Virtual Machine abstracted as child node where each node is 1GHz)       
+               </li>
+               <li>  2 Xeon based Infrastructure Node (8 Virtual Machine abstracted as child node where each node is 1GHz)
+              </li>          
+                </ol>
+                </p>
+               </section> 
+               
+           
+           
+           <section class="slide">  
+           <div >
+               <h2>Experimental Setup</h2>
+                         <table>
+                 <tbody>
+                   <tr>
+                     <th scope="col">Component</th>
+                     <th>Required CPU (GHz)</th>
+                     <th>Security Level</th>
+                     <th>CPU Load (VCPU % )</th>
+                   </tr>     
+                   <tr>
+                     <th scope="col">ItemDB	  </th>
+                     <td>1.2	</td>
+                      <td>2	</td>
+                       <td>40</td>
+                   </tr>              
+                   <tr>
+                     <th scope="col">LoadBalancer	  </th>
+                     <td>0.4</td>
+                      <td>0	</td>
+                       <td>20</td>
+                   </tr>              <tr>
+                     <th scope="col">   PaymentDB	  </th>
+                     <td>0.6</td>
+                      <td>4	</td>
+                       <td>60</td>
+                   </tr>              <tr>
+                     <th scope="col">   UserDB	  </th>
+                     <td>0.4</td>
+                      <td>3	</td>
+                       <td>40</td>
+                   </tr>
+                   <tr>
+                     <th scope="col">   WebFrontend	  </th>
+                     <td>1.2</td>
+                      <td>1	</td>
+                       <td>40</td>
+                   </tr>
+                       </tbody>
+               </table>          
+                <p><div align="justified">We compare multi-objective (CMOOP-epsilon) versus mono-objective (SLAPerformance objective) for 20000 generations
+                
+                </div>  </p>  </p>
+                 </section>     
+               
+               
+               
+                <section class="slide">  
+                <div >
+                    <h2>Validation Objectives</h2>
+                    <p>We aim at investigating the <code>Feasibility</code> and the <code>Scalability</code>of our approach:                      <ol>
+                      <li>Comparing mono-objective vs. multi-objective optimization
+                       </li>
+                      <li>Comparing multi-objective algorithms in terms of objectives satisfaction and scalability             
+                      </li>              
+                       </ol>
+                       </p>
+                      </section>
+                  
+                
+                  
+               <section class="slide">  
+               <div >
+                   <h2>Research Questions</h2>
+                
+                     <ol>
+                     <li>What is the benefit of using multi-objective optimization compared to mono-objective one? How faster a good solution is found using a mono-objective?
+                     
+                      </li>
+                     <li>Which algorithm: CMOP-epsilon Dominance, CMOP without Epsilon Dominance and Random algorithm better satisfies the objectives while scaling to more complex cloud infrastructure model?
+                                    
+                     </li>              
+                      </ol>
+                      </p>
+                     </section>
+                     
+                     
+                     
+                     
+               
+               <section class="slide">
+                 <div>
+                   <h2>Multi-objective versus Single-objective
+                   </h2>
+                   
+                <div align="center">    
+                <img src="pictures/objectives.jpg"  style="
+                      position:relative;
+                      height="580"
+                      width="580"
+                      visibility: show;"  alt="      ">                
+                          <figcaption>Evolution of the fitness score of all objective functions and the evolution of the average function (mean)</figcaption>
+                 
+                 </div>     
+                  </div>          </section> 
+               
+            
+            
+            
+           
+           
+           <section class="slide">  
+           <div >
+               <h2>Fitness Functions Scores (mono-objective versus multi-objective)</h2>
+                         <table>
+                 <tbody>
+                   <tr>
+                     <th scope="col"></th>
+                     <th>Mono-objective,600 ms</th>
+                     <th>CMOP-epsilon,1700 ms</th>
+                                 </tr>  
+            
+                   
+                 <tr>
+                   <th scope="col">Completeness</th>
+                                  <td>0</td >
+                    <td>0.0</td >
+                 </tr> 
+                 
+                 <tr>
+                   <th scope="col">Consumption</th>
+                        
+                    <td>100.0</td >
+                    <td>43.47</td >
+                 </tr> 
+                 
+                 <tr>
+                   <th scope="col">Overload</th>
+                     
+                    <td>24.0</td >
+                    <td>0.0</td >
+                 </tr> 
+                 
+                 <tr>
+                   <th scope="col">Security</th>
+                    
+                    <td>70.0</td >
+                    <td>0.0</td >
+                 </tr> 
+                 
+                 <tr>
+                   <th scope="col">SLAPerformance</th>
+                     
+                    <td>0.0</td >
+                    <td>0.0</td >
+                 </tr> 
+                 
+           </tbody>
+               </table>          
+           </section>   
+                 
+                 
+                 
+          <section class="slide">  
+          <div >
+              <h2>Multi-objective approach  scalability</h2> 
+                  <ol>
+                <li>How the quality of results is impacted by the size of the search domain? 
+                       
+                </li>
+                <li> How the convergence speed is impacted by the size of the search domain?           
+                
+               </li>          
+                 </ol>
+                 </p>
+                </section>        
+                 
+                 
+                 
+          <section class="slide">  
+          <div >
+              <h2>Experiments Setup</h2> 
+              We scale the infrastructure from 5 infrastructure hosts (scale 1) to 60 infrastructure hosts (scale 12) and compare:                  
+                  <ol>
+                <li>NSGA II (1000 generations)                
+                </li>
+                <li> NSGA II with epsilon-dominance (1000 generations)         
+               </li> 
+               <li> Random generation (500 generations) 
+               </li>       
+                 </ol>
+                 </p>
+                </section>      
+                
+                
+                
+                   <section class="slide">
+                     <div align="center">
+                       <h2>Multi-objective algorithms versus Random (Scale 4)
+                       </h2>
+                   <div align="center">    
+                    <img src="pictures/randomversusmultiobjective.jpg"  style="
+                          position:relative;
+                          height="600"
+                          width="600"
+                          visibility: show;"  alt=""> 
+                   </div>     
+                      </div></section> 
+                      
+                      
+                      
+                      
+                   
+         <section class="slide">
+         <div >
+             <h2>Algorithms Comparison for different scales
+             </h2>
+                       <table>
+                       
+               <tbody>
+                 <tr>
+                   <th scope="col">Scale</th>
+                   <th>Random</th>
+                   <th>CMOOP</th>
+                   <th>CMOOP-epsilon</th>
+                               </tr>  
+          
+                 
+               <tr>
+                 <th scope="col">1</th>
+                  <td>18</td >
+                  <td>6.4</td >
+                   <td>5.21</td >
+               </tr> 
+               
+                  
+                  <tr>
+                    <th scope="col">3</th>
+                     <td>16</td >
+                     <td>5.9</td >
+                      <td>6</td >
+                  </tr> 
+                  
+                  <tr>
+                    <th scope="col">4</th>
+                     <td>14.7</td >
+                     <td>7.9</td >
+                      <td>8.9</td >
+                  </tr> 
+                  
+                  <tr>
+                    <th scope="col">5</th>
+                     <td>16</td >
+                     <td>7.1</td >
+                      <td>8.8</td >
+                  </tr> 
+                  
+                  
+                  <tr>
+                    <th scope="col">8</th>
+                     <td>14.9</td >
+                     <td>6.69</td >
+                      <td>9.4</td >
+                  </tr> 
+                  
+                  <tr>
+                    <th scope="col">12</th>
+                     <td>14</td >
+                     <td>8.3</td >
+                      <td>11</td >
+                  </tr> 
+                        
+         </tbody>
+             </table>          
+         
+                 </div></section> 
+         
+         
+         
+         <section class="slide">  
+         <div >
+             <h2>Threats to Validity</h2> 
+           <b><i>Internal Validity: </i></b>                        
+                 <ol>
+               <li>      Number of generations and populations at the initial setup </li>
+               <li>    Stopping criterion                   
+              </li>  
+              <li>    Fitness functions models         
+              </li>   
+                </ol>
+            <b><i> External validity: </i></b>  
+                  <ol>
+            <li>  Pertinence of the chosen optimization axis     
+           
+            </li>
+            <li>   Selected resolution strategies          </li>  
+             </ol>          
+               </section>   
+               
+             <section class="slide shout">
+               <div>
+                 <h2>Conclusion</h2>
+               </div>
+             </section>        
+             
+             
+             
+             
+             
+             
+                         
+            <section class="slide">  
+            <div align="justified">
+                <h2>Conclusion</h2> 
+                     
+                    <ol>
+   
+                 <li>  Effectiveness of the optimization at the level of <code>architectural models</code>: reasonable solutions in reasonable time, acceptable in the case of cloud dynamic reconfiguration     
+                 </li>                                 
+                 <li>    Effectiveness of <code>search-based approaches</code> to resolve a cloud multi-objective optimization problem                  
+                  </li>  
+                 <li>    Implementation using Kevoree as a <code>Models@run.time</code> platform      
+                </li> 
+                   </ol>
+                 </section>  
+                          
+            <section class="slide">  
+            <div align="justified">
+                <h2>Future Work</h2> 
+                 <ol>
+                  <li>Detection of the absence of improvements as a <code>stopping criterion</code></li>
+                   <li>Comparison with other <code>resolution strategies</code></li>                  
+                  <li>   Usage of <code>Hyper-heuristics </code> to improve the search performance                         
+                 </li>  
+                 </ol>
+             </section>  
+               
+<section class="slide">
+  <div align="center">
+    <h2>감사합니다!!!   </h2>
+<div align="bottom">        
+           <img src="pictures/conclusion.jpg"  style="
+      position:relative;
+      height="250"
+      width="250"
+      visibility: show;" alt="">
+ </div> 
+
+   </div></section> 
+    
+    
+
+    
+
+	<p class="badge"><a href="http://kevoree.org">SMARTIES project</a></p>
+	<div class="progress"><div></div></div>
+	<script src="shower/shower.min.js"></script>
+	
+
+	   
+	    <p class="badge"><a href="https://github.com/shower/shower">Fork me on
+	        Github</a></p>
+	    <!--
+			To hide progress bar from entire presentation		just remove “progress” element.
+			-->
+	    <div class="progress">
+	      <div></div>
+	    </div>
+	    <script src="shower/shower.min.js"></script>
+	    <!-- Copyright © 2013 Yours Truly, Famous Inc. -->
+	    <!-- Photos by John Carey, fiftyfootshadows.net -->
+	  </body>
+	</html>
+	
+	
+	
+</body>
+</html>
