@@ -71,6 +71,7 @@
 	           <li><span class="kevOrange">Donia El Kateb:</span> PhD student</li>
 	           <li><span class="kevOrange">François Fouquet:</span> Research associate</li>
 	           <li><span class="kevOrange">Grégory Nain:</span> Research associate</li>
+	            <li><span class="kevOrange">Jorge Augusto Meira:</span> PhD student</li>
 	           <li><span class="kevOrange">Michel Ackerman:</span> Business Consultant, EBRC</li>
 	           <li><span class="kevOrange">Yves Le Traon:</span> Professor, Head of the SerVal research group</li>
 	       </ul>
@@ -100,24 +101,18 @@
       <i>(2013, January) A Walk in the Clouds. Cloud Computing, CDW-G Reference Guide.</i> </p>  </div></section>   
    
    
-   	    
-   	    <section class="slide">
-   	      <div>
-   	        <h2><img src="img/cloud.png" width="70" height="70" /> Cloud Resources Management      </h2>
-   	        
-   	        <span class="kevOrange">Management of set of <code>heterogeneous</code> Resources	        :</span>	            
-   	       <ul>
-   	           <li> Different software versions, VM Management Platforms </li>
-   	          <li> Different physical machines characteristics</li>
-   	           <li> Concurrent execution of multiple operating systems </li>	          
-   	       </ul>
-   	       <span class="kevOrange">Need for <code>Resources Placement</code> Strategies  :</span>	            
-   	       <ul>	         
-   	           <li> Migrate VMs to more utilized nodes, Shutdown unused nodes </li>
-   	           <li> <code>Schedule</code> VMs to physical nodes, Virtual Machines <code>isolation</code></li>
-   	       </ul>
-   	       </div>
-   	    </section>  
+   
+   
+ <section class="slide">
+   <div align="center">
+     <h2> Cloud Resources</h2>
+     <img src="pictures/abstraction.jpg"  style="
+          position:relative;
+          height="750"
+          width="750"
+          visibility: show;" alt="">
+     </div>    
+ </section>  
    	    
    	    
    	    <section class="slide">
@@ -130,6 +125,30 @@
    	             visibility: show;" alt="">
    	        </div>    
    	    </section>  
+   	  
+   	    
+   	    	    
+   	    	    <section class="slide">
+   	    	      <div>
+   	    	        <h2><img src="img/cloud.png" width="70" height="70" /> Cloud Resources Management      </h2>
+   	    	    
+   	    	       <span class="kevOrange">Need for <code>Resources Placement</code> Strategies:</span>	            
+   	    	       <ul>	         
+   	    	           <li><code>Schedule</code> VMs to physical nodes</li>
+   	    	           <li>Virtual Machines <code>isolation</code>, shutdown unused nodes</li>
+   	    	        
+   	    	       </ul>
+   	    	       <span class="kevOrange">Management of set of <code>heterogeneous</code> Resources:</span>	            
+   	    	       <ul>
+   	    	           <li> Different software versions  </li>
+   	    	             <li> Different VM Management Platforms </li>
+   	    	          <li> Different physical machines characteristics</li>
+   	    	         	          
+   	    	       </ul>
+   	    	       </div>
+   	    	    </section> 
+   	    	    
+   	    	    
    	    
    	    <section class="slide shout">
    	      <div>
@@ -143,7 +162,7 @@
    	  <section class="slide">
    	    <div>
    	      <h2> Abstraction for Elasticity Management   	      </h2>
-   	       <p class="note"> "the ability of software to meet changing capacity demands, deploying and releasing necessary resources on-demand"[Yefim et al.]</p>   	  
+   	       <p class="note"> "The ability of software to meet changing capacity demands, deploying and releasing necessary resources on-demand"[Yefim et al.]</p>   	  
    	    <span class="kevOrange">Need to provision/deprovision resources dynamically as response to:</span>	            
    	     <ul>
    	         <li> Increasing Workloads, Incident Response </li>
@@ -186,7 +205,8 @@
    	    <section class="slide">
    	      <div>
    	        <h2><img src="img/cloud.png" width="70" height="70" />Motivation	      </h2>
-   	         <p>Writing a reasoner to handle  these trade-offs is difficult:
+   	         <p align="justify">We aim at proposing a framework to configure dynamically a cloud infrastructure according to customers and providers objectives.
+   	          The framework has to be embedded with a <code>reasoner</code> to handle trade-offs considering:
    	         </p>   	  
    	   	            
    	       <ul>
@@ -200,8 +220,8 @@
    	    
    	    <section class="slide">
    	      <div>
-   	        <h2><img src="img/cloud.png" width="70" height="70" >The cloud is a DAAS  </h2>
-   	         <p>The Cloud is a Dynamic Adaptive system: </p>   	  
+   	        <h2><img src="img/cloud.png" width="70" height="70" >Is the cloud a DAS ? </h2>
+   	         	  
    	    	<ul>
    	           <li>Reconfiguration capabilities at runtime, to adjust to unpredictable conditions: <code>reflection</code>  </li>
    	           <li>Capacity of observing their own behavior and analyzing their effectiveness: <code>introspection</code> </li>	   
@@ -215,7 +235,7 @@
    	    
    <section class="slide">
      <div>
-       <h2><img src="img/cloud.png" width="70" height="70" >Models at run.time for the Cloud </h2>
+       <h2><img src="img/cloud.png" width="70" height="70" >Cloud Architectural Model </h2>
       
      </div>
     <div >        
@@ -231,73 +251,22 @@
    	  </div>
    	</section>
    	    
-   	  <section class="slide">
-   	    <div>
-   	      <h2><img src="img/cloud.png" width="70" height="70" >Problem Inputs </h2>
-   	     
-   	  	<ul>
-   	         <li>  A set of requirements that we must satisfy over time: <code>objectives</code>   </li>
-   	         <li>  A cloud configuration: <code>a model</code> </li>	   
-   	         <li>  A set of actions to update a configuration: <code>operators</code>   </li>	       
-   	     </ul> 
-   	    </div>
-   	  </section> 
 
    	  
    	  <section class="slide">
    	    <div>
-   	      <h2><img src="img/cloud.png" width="70" height="70" >Resolution Approaches  </h2>
-   	     
-   	  	<ul>
+   	      <h2><img src="img/cloud.png" width="70" height="70" >Resolution Approaches  </h2>   	  	<ul>
    	         <li>  Constraint Solving Techniques  </li>
    	         <li>  Simulated Annealing </li>	   
    	         <li>    Tabu Search  </li>	       
    	     </ul> 
-   	     
-   	     <ul>
-   	         <li>  We advocate MOEA (Multi-objective Evolutionary Algorithm):   </li>
-   	         <li>  <code>Population</code> based </li>	   
+   	     <p>  We advocate MOEA (Multi-objective Evolutionary Algorithm):   </p>
+   	     <ul> <li>  <code>Population</code> based </li>	   
    	         <li>  Possible <code>optimal solutions</code> at any generation  </li>	       
    	     </ul> 
-   	     
-   	     
    	    </div>
    	  </section> 
-   	  
 
-   	 
-   	 
-   	 <section class="slide">
-   	   <div>
-   	     <h2><img src="img/cloud.png" width="70" height="70" >Overall approach</h2>
-   	     
-   	  <div align="center">        
-   	  <img src="pictures/approach.jpg"  style="
-   	        position:relative;
-   	        height="550"
-   	        width="550"
-   	        visibility: show;" alt="">
-   	   </div>     
-   	    </div>       
-   	 </section> 
-   	
-   	  
-   	 
-   	 <section class="slide">
-   	   <div>
-   	     <h2><img src="img/cloud.png" width="70" height="70" >CMOP Inputs</h2>       
-   	  <div align="center">        
-   	  <img src="pictures/delivery.jpg"  style="
-   	        position:relative;
-   	        height="700"
-   	        width="700"
-   	        visibility: show;" alt="">
-   	   </div>     
-   	    </div>       
-   	 </section>     
-   	  
-   	  
-   	  
    	    
      
          <section class="slide">  
@@ -336,6 +305,17 @@
          
          
    
+       <section class="slide">
+         <div>
+           <h2><img src="img/cloud.png" width="70" height="70" >Problem Inputs </h2>
+          
+       	<ul>
+              <li>  A set of requirements that we must satisfy over time: <code>objectives</code> (Static or dynamic)</li>
+              <li>  A cloud configuration: <code>a model</code> </li>	   
+              <li>  A set of actions to update a configuration: <code>operators</code>   </li>	       
+          </ul> 
+         </div>
+       </section> 
          
          
          
@@ -423,15 +403,33 @@
            <div>
              <h2><img src="img/cloud.png" width="70" height="70" >CMOP Workflow</h2>
             <div align="center">        
-            <img src="pictures/workflow.jpg"  style="
+            <img src="pictures/cmop.jpg"  style="
                   position:relative;
-                  height="390"
-                  width="390"
+                  height="350"
+                  width="350"
                   visibility: show;" alt="">
              </div>     
                   </div>
          </section>
          
+   	  
+
+   	 
+   	 
+   	 <section class="slide">
+   	   <div>
+   	     <h2><img src="img/cloud.png" width="70" height="70" >Overall approach</h2>
+   	     
+   	  <div align="center">        
+   	  <img src="pictures/workflow.jpg"  style="
+   	        position:relative;
+   	        height="500"
+   	        width="500"
+   	        visibility: show;" alt="">
+   	   </div>     
+   	    </div>       
+   	 </section> 
+   	
          
          <section class="slide shout">
            <div>
@@ -442,14 +440,13 @@
            
       <section class="slide">  
       <div >
-          <h2><img src="img/cloud.png" width="70" height="70" >Validation Objectives</h2>
+          <h2><img src="img/cloud.png" width="70" height="70" >Validation Scenario</h2>
           <p>Validation of our approach is related to the scenarios of interest for EBRC provider in Luxembourg and aims at:                        
             <ol>
             <li>Providing an approach to reconfigure a cloud platform according to evolving customer <code>optimization objectives</code>
              </li>
-            <li> <code>Adjusting</code> customers resources provisioning and quality of service to the deployment costs                 
-            </li>  
-              <li> <code>Reducing</code> data center energy consumption at the level of the cloud provider                 
+          
+              <li> <code>Reducing</code> data center energy consumption              
               </li>            
              </ol>
              </p>
@@ -465,7 +462,7 @@
            
         <section class="slide">  
         <div >
-            <h2><img src="img/cloud.png" width="70" height="70" >Experimental Setup</h2>
+            <h2><img src="img/cloud.png" width="70" height="70" >Validation Scenario</h2>
             
              <p><div align="justified">EBRC allocates to one of its customers a cluster composed of 5 physical machines to host its on-line stock trading website composed of:</div>  </p>
             
@@ -548,9 +545,7 @@
                    </tr>
                        </tbody>
                </table>          
-                <p><div align="justified">We compare multi-objective (CMOOP-epsilon) versus mono-objective (SLAPerformance objective) for 20000 generations
-                
-                </div>  </p>  </p>
+               </p>
                  </section>     
                
                
@@ -590,7 +585,7 @@
                
                <section class="slide">
                  <div>
-                   <h2><img src="img/cloud.png" width="70" height="70" >Multi-objective versus Single-objective
+                   <h2><img src="img/cloud.png" width="70" height="70" >Multi-objective optimization results
                    </h2>
                    
                 <div align="center">    
@@ -710,8 +705,8 @@
                  <tr>
                    <th scope="col">Scale</th>
                    <th>Random</th>
-                   <th>CMOOP</th>
-                   <th>CMOOP-epsilon</th>
+                   <th>CMOP</th>
+                   <th>CMOP-epsilon</th>
                                </tr>  
           
                  
@@ -771,7 +766,7 @@
              <h2><img src="img/cloud.png" width="70" height="70" >Threats to Validity</h2> 
            <b><i>Internal Validity: </i></b>                        
                  <ol>
-               <li>      Number of generations and populations at the initial setup </li>
+               <li>      Number of generations at the initial setup </li>
                <li>    Stopping criterion                   
               </li>  
               <li>    Fitness functions models         
@@ -804,7 +799,7 @@
                      
                     <ol>
    
-                 <li>  Effectiveness of the optimization at the level of <code>architectural models</code>: reasonable solutions in reasonable time                 </li>                                 
+                 <li>  Effectiveness of the optimization at the level of <code>architectural models</code> </li>                                 
                  <li>    Effectiveness of <code>search-based approaches</code> to resolve a cloud multi-objective optimization problem                  
                   </li>  
                  <li>    Implementation using Kevoree as a <code>Models@run.time</code> platform      
