@@ -162,11 +162,14 @@
    	  <section class="slide">
    	    <div>
    	      <h2> Abstraction for Elasticity Management   	      </h2>
-   	       <p class="note"> "The ability of software to meet changing capacity demands, deploying and releasing necessary resources on-demand"[Yefim et al.]</p>   	  
-   	    <span class="kevOrange">Need to provision/deprovision resources dynamically as response to:</span>	            
+   	       <p class="note"> "Cloud elasticity is the ability of the cloud 
+   	       infrastructure to rapidly change the amount of resources allocated
+   	       to a service in order to meet the actual varying demands on
+   	       the service while enforcing SLAs." [Ali-Eldin et al.]</p>   	  
+   	    <span class="kevOrange">Dynamic resources provisioning/deprovisioning as response to:</span>	            
    	     <ul>
-   	         <li> Increasing Workloads, Incident Response </li>
-   	         <li>  Changes in SLA requirements</li>	        
+   	         <li> Increasing Workloads, Incident Response, Changes in SLA requirements </li>
+   	          
    	     </ul>  	    
    	   We need an <code>abstraction layer</code>and a <code>reasoning engine</code> to reason about</code> cloud adaptations   	 </p>         	    
    	     </div>
@@ -191,7 +194,7 @@
    	   <div>
    	       <h2><img src="img/cloud.png" width="70" height="70" />Cloud Management</h2> 
    	       <ul>      
-   	          <li>Cloud management (i.e., VM elastic management) has to deal with <code>trade-offs</code> such as cost, quality of service and security.</li>
+   	          <li>Cloud management (i.e., VM elastic management) has to deal with <code>trade-offs</code> such as cost, quality of service and security</li>
    	         <li>Cloud Management is a <code>multi-objective</code> optimization problem</li>	
    	       <li>Current cloud platforms usually focus on one <code>dimensional optimization</code></li>	
    	        </ul> 
@@ -258,12 +261,9 @@
    	      <h2><img src="img/cloud.png" width="70" height="70" >Resolution Approaches  </h2>   	  	<ul>
    	         <li>  Constraint Solving Techniques  </li>
    	         <li>  Simulated Annealing </li>	   
-   	         <li>    Tabu Search  </li>	       
-   	     </ul> 
-   	     <p>  We advocate MOEA (Multi-objective Evolutionary Algorithm):   </p>
-   	     <ul> <li>  <code>Population</code> based </li>	   
-   	         <li>  Possible <code>optimal solutions</code> at any generation  </li>	       
-   	     </ul> 
+   	         <li>    Tabu Search  </li>	   
+   	         <li>  <code> MOEA (Multi-objective Evolutionary Algorithm)  </code></li>	     
+   	    
    	    </div>
    	  </section> 
 
@@ -399,10 +399,10 @@
            <div>
              <h2><img src="img/cloud.png" width="70" height="70" >CMOP Workflow</h2>
             <div align="center">        
-            <img src="pictures/cmop.jpg"  style="
+            <img src="pictures/workflow-nsga.jpg"  style="
                   position:relative;
-                  height="350"
-                  width="350"
+                  height="360"
+                  width="360"
                   visibility: show;" alt="">
              </div>     
                   </div>
@@ -509,35 +509,32 @@
                      <th scope="col">Component</th>
                      <th>Required CPU (GHz)</th>
                      <th>Security Level</th>
-                     <th>CPU Load (VCPU % )</th>
+                    
                    </tr>     
                    <tr>
                      <th scope="col">ItemDB	  </th>
                      <td>1.2	</td>
                       <td>2	</td>
-                       <td>40</td>
-                   </tr>              
+                                        </tr>              
                    <tr>
                      <th scope="col">LoadBalancer	  </th>
                      <td>0.4</td>
                       <td>0	</td>
-                       <td>20</td>
-                   </tr>              <tr>
+                                        </tr>              <tr>
                      <th scope="col">   PaymentDB	  </th>
                      <td>0.6</td>
                       <td>4	</td>
-                       <td>60</td>
+                      
                    </tr>              <tr>
                      <th scope="col">   UserDB	  </th>
                      <td>0.4</td>
                       <td>3	</td>
-                       <td>40</td>
-                   </tr>
+                                         </tr>
                    <tr>
                      <th scope="col">   WebFrontend	  </th>
                      <td>1.2</td>
                       <td>1	</td>
-                       <td>40</td>
+                      
                    </tr>
                        </tbody>
                </table>          
